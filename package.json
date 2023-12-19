@@ -6,8 +6,7 @@
   "packageManager": "pnpm@8.7.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && VITE_COMMIT_REF=$COMMIT_REF VITE_BUILD_TIME=$(date +'%b %d, %Y') VITE_REPOSITORY_URL=$REPOSITORY_URL vite build && cp _redirects dist/_redirects",
-    "build-dev": "tsc && npx netlify-cli build",
+    "build": "tsc && VITE_COMMIT_REF=$COMMIT_REF VITE_BUILD_TIME=$(date +'%b %d, %Y') VITE_REPOSITORY_URL=$REPOSITORY_URL vite build",
     "lint": "eslint . --fix",
     "preview": "vite preview",
     "add-component": "hygen component new",

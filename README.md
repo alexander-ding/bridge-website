@@ -28,19 +28,8 @@ To create a production build locally, run
 pnpm build
 ```
 
-To simulate a Netlify production build (this requires the [Netlify CLI](https://docs.netlify.com/cli/get-started/)), run
-
-```bash
-pnpm build-dev
-```
-
-This takes longer but is closer to the build process run on Netlify's servers, which allows you to debug Netlify-specific integrations, such as embedding build-time environment variables into the website and configuring routing information.
-
 To serve the local builds, run
 
 ```bash
 npx serve dist
 ```
-
-To deploy to production, simply push commits to the main branch.
-Netlify watches for commits and automatically triggers new builds as commits come in.
