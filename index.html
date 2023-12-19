@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Alex Ding" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description"
+    content="Bridge is an RFC-compliant userland IP/TCP/HTTP implementation built in Rust that runs through UDP sockets to create a virtual network.">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridge</title>
+  <script>
+    (function () {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('ading-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light')) document.documentElement.classList.toggle('dark', true)
+    })()
+  </script>
+</head>
+
+<body class="font-sans">
+  <div id="app"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

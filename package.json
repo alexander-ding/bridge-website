@@ -1,0 +1,61 @@
+{
+  "name": "alexding.me",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "pnpm@8.7.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && VITE_COMMIT_REF=$COMMIT_REF VITE_BUILD_TIME=$(date +'%b %d, %Y') VITE_REPOSITORY_URL=$REPOSITORY_URL vite build && cp _redirects dist/_redirects",
+    "build-dev": "tsc && npx netlify-cli build",
+    "lint": "eslint . --fix",
+    "preview": "vite preview",
+    "add-component": "hygen component new",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@preact/compat": "^17.1.2",
+    "@preact/signals": "^1.2.2",
+    "dayjs": "^1.11.9",
+    "nprogress": "^0.2.0",
+    "preact": "10.10.0",
+    "react-router-dom": "^6.15.0",
+    "react-slidedown": "^2.4.7",
+    "url-join": "^5.0.0"
+  },
+  "aliasify": {
+    "aliases": {
+      "react": "preact-compat",
+      "react-dom": "preact-compat"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.10",
+    "@iconify-json/ri": "^1.1.12",
+    "@preact/preset-vite": "^2.5.0",
+    "@svgr/core": "^6.5.1",
+    "@types/nprogress": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@unocss/preset-icons": "^0.45.30",
+    "aliasify": "^2.1.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.3",
+    "hygen": "^6.2.11",
+    "lint-staged": "^13.3.0",
+    "prettier": "2.7.1",
+    "typescript": "^4.9.5",
+    "unocss": "^0.44.7",
+    "vite": "^3.2.7"
+  }
+}
