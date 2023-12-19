@@ -1,7 +1,7 @@
 import './index.css'
 
 import { useCallback } from 'preact/hooks'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import useColorScheme, { ColorScheme } from '../../hooks/useColorScheme'
 import Background from '../Background'
@@ -17,16 +17,21 @@ export function Navbar() {
     }
   }, [colorScheme, setColorScheme])
 
-
   return (
     <header className='text-gray-700 dark:text-gray-200'>
       <Background />
+      <Link
+        to='/'
+        className='w-8 h-8 fixed lt-lg:absolute m-6 select-none outline-none'
+      >
+        <img width='32' height='32' src='/assets/logo.png' />
+      </Link>
       <nav className='nav'>
         <div className='spacer' />
         <div className='right'>
           <NavLink title='Report' to='/report'>
             <span className='lt-sm:display-none'>Report </span>
-            <i className='i-ri-tools-line' />
+            <i className='i-ri-book-line' />
           </NavLink>
           <NavLink title='Post Request' to='/post-request'>
             <span className='lt-sm:display-none'>Post Request </span>
@@ -46,11 +51,7 @@ export function Navbar() {
           >
             <i className='i-ri-github-line' />
           </a>
-          <a
-            title='Toggle theme'
-            className='select-none'
-            onClick={toggleTheme}
-          >
+          <a title='Toggle theme' className='select-none' onClick={toggleTheme}>
             <i
               className={
                 colorScheme === ColorScheme.Light
