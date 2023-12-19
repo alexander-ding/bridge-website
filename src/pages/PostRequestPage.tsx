@@ -21,6 +21,8 @@ export default function PostRequestPage() {
       </p>
 
       <iframe
+        allowTransparency={true}
+        style='background: #FFFFFF55;'
         src={'http://' + hostname + ':1000'}
         width='100%'
         height='500'
